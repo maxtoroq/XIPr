@@ -49,7 +49,7 @@
 		<xsl:if test="exists(@accept-language)">
 			<xsl:sequence select="xipr:message('XIPr does not support the accept-language attribute', 'info')"/>
 		</xsl:if>
-		<xsl:variable name="include-uri" select="resolve-uri(@href, document-uri(/))"/>
+		<xsl:variable name="include-uri" select="resolve-uri(@href, base-uri())"/>
 		<xsl:choose>
 			<xsl:when test="@parse eq 'xml' or empty(@parse)">
 				<!-- SPEC: This attribute is optional. When omitted, the value of "xml" is implied (even in the absence of a default value declaration). -->
